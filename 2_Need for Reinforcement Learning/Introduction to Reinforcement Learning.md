@@ -30,8 +30,8 @@ Some decisions won’t have immediate feedback.
 ##  Machine Learning (ML) vs. Reinforcement Learning (RL)
 
 ###  Traditional Machine Learning:
-- Every input has a known label or reward.  
-Example:  
+Every input has a known label or reward.  
+Example:
 - Input → “Red apple”  
 - Label → “Apple”
 
