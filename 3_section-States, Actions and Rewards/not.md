@@ -45,6 +45,25 @@ Ancak yalnızca bu sayılar yeterli **durum bilgisi** sağlamaz. Daha anlamlı b
   - **Momentum**
   - **Volatilite**
 
+---
+## 🎯 Action (Eylem) Nedir?
+
+### Pong’ta:
+- Kullanıcının yaptığı hareket: yukarı, aşağı, bekle
+
+### Finansal İşlemlerde:
+- Yatırımcının her zaman adımında verebileceği kararlar:
+  - `Buy` (Al)
+  - `Hold` (Bekle)
+  - `Sell` (Sat)
+
+### Detaylar:
+- Her `state` (durum) gözlemlendiğinde, sistem bir `action` seçer.
+- Seçilen bu eylem, yatırım sonucunu belirler.
+- Hangi eylemin seçileceği, geçmiş deneyimlerden ve o andaki `state`'ten etkilenir.
+
+---
+
 ### Zaman dilimi farklılığı:
 - RSI indikatörü hem dakikalık, hem saatlik, hem de günlük grafikte uygulanabilir.
 - Bu sayede farklı zaman ölçeklerinden bilgi elde edilir.
