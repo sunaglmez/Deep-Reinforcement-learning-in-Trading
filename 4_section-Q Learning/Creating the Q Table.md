@@ -56,6 +56,19 @@ Q(s, a) = R(s, a) + \gamma \cdot \max Q(s', a')
 3. **Repeat backward for all steps.**  
    - Q table is filled **step by step**.
 
+## What the Bellman Equation Provides
+
+- It considers **not only immediate rewards** but also **future rewards**.  
+  → The agent evaluates not just the reward of the current action, but also the **best possible future rewards**.
+
+- It enables learning by **updating Q-values (state-action values) step by step**.  
+  → This allows the agent to estimate **which action is more profitable in the long run** for each state.
+
+- With the learning rate **gamma (γ)**, it lets us control **how much importance is given to future rewards**.  
+  → The model can benefit from both **past experiences** and **future potential rewards** in a balanced way.
+
+- As a result, the agent can discover the **optimal strategy** — the action sequence that leads to the **highest total reward**. 🏆
+
 ## Classic RL vs Deep RL 🤖
 
 - **Classic RL:**  
