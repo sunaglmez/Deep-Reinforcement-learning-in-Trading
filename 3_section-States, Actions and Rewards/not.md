@@ -1,86 +1,80 @@
-# Reinforcement Learning Öğeleri
+# Elements of Reinforcement Learning
 
-**Reinforcement Learning (Pekiştirmeli Öğrenme)** sürecindeki üç temel öğe:
-- **State (Durum)**
-- **Action (Eylem)**
-- **Reward (Ödül)**
+The three main components in the **Reinforcement Learning (RL)** process are:
+- **State**
+- **Action**
+- **Reward**
 
-## 🕹️ Örnek: Pong Oyunu
+## 🕹️ Example: Pong Game
 
-1980'li yılların meşhur oyunu **Pong** üzerinden örnek veribiliriz.
+We can use the famous 1980s game **Pong** as an example.
 
-- **Eylemler (Actions)**: Yukarı, aşağı veya sabit kal.
-- Her eylem belirli bir **zaman adımında (T)** gerçekleştirilir.
+- **Actions**: Move up, move down, or stay still.
+- Each action is taken at a specific **time step (T)**.
 
-Bu örnekten yola çıkarak ticaret (trading) uygulamasına geçebiliriz:
+Based on this, we can move on to a trading application:
 
-- Bir yatırımcı genellikle üç karar alabilir: **Buy (Al), Hold (Tut), Sell (Sat)**.
-- Bu kararlar da her zaman adımında bir eylemdir.
+- An investor usually has three choices: **Buy, Hold, Sell**.
+- These decisions are also actions taken at each time step.
 
-## State (Durum) Nedir?
+## What is a State?
 
-- **Pong'da**: Topun ve raketin pozisyonu = O anki **durum**.
-- **Finansal piyasalarda**: Piyasa verileri (örneğin grafik görünümü) = Durum.
+- **In Pong**: The position of the ball and paddle = current **state**.
+- **In financial markets**: Market data (e.g., chart view) = state.
 
-### Örnek:
+### Example:
 
-29 Haziran 2020 tarihinde Tesla'nın **OHLC (Open, High, Low, Close)** verileri alınır.
+On June 29, 2020, Tesla's **OHLC (Open, High, Low, Close)** data is taken.
 
-Ancak yalnızca bu sayılar yeterli **durum bilgisi** sağlamaz. Daha anlamlı bir yapı gerekir.
+But these numbers alone don’t provide enough **state information**. A more meaningful structure is needed.
 
-## 🔍 Daha İyi Durum (State) Bilgisi Nasıl Oluşturulur?
+## 🔍 How to Build Better State Information?
 
-### Basit yaklaşım:
-- Sadece son kapanış fiyatı ile bir önceki kapanış fiyatı karşılaştırılır.
+### Simple approach:
+- Compare only the last closing price with the previous one.
 
-### Daha gelişmiş yaklaşım:
-- Son N kapanış fiyatı dikkate alınır.
-- Teknik göstergeler (indikatörler) eklenir:
-  - **Hareketli Ortalamalar (Moving Averages)**
+### More advanced approach:
+- Use the last N closing prices.
+- Add technical indicators:
+  - **Moving Averages**
   - **RSI (Relative Strength Index)**
   - **Momentum**
-  - **Volatilite**
+  - **Volatility**
 
-## Action (Eylem) Nedir?
+## What is an Action?
 
-### Pong’ta:
-- Kullanıcının yaptığı hareket: yukarı, aşağı, bekle
+### In Pong:
+- The user’s move: up, down, or wait
 
-### Finansal İşlemlerde:
-- Yatırımcının her zaman adımında verebileceği kararlar:
-  - `Buy` (Al)
-  - `Hold` (Bekle)
-  - `Sell` (Sat)
+### In Financial Trading:
+- The investor's decision at each time step:
+  - `Buy`
+  - `Hold`
+  - `Sell`
 
-- Her `state` (durum) gözlemlendiğinde, sistem bir `action` seçer.
-- Seçilen bu eylem, yatırım sonucunu belirler.
-- Hangi eylemin seçileceği, geçmiş deneyimlerden ve o andaki `state`'ten etkilenir.
+- When a `state` is observed, the system chooses an `action`.
+- The selected action determines the investment outcome.
+- The choice of action depends on past experience and the current `state`.
 
-### Zaman dilimi farklılığı:
-- RSI indikatörü hem dakikalık, hem saatlik, hem de günlük grafikte uygulanabilir.
-- Bu sayede farklı zaman ölçeklerinden bilgi elde edilir.
+### Timeframe difference:
+- The RSI indicator can be applied to minute, hourly, or daily charts.
+- This provides information from different time scales.
 
-Tüm bu bilgiler birleştirilerek **zaman t'deki State vektörü (Sₜ)** oluşturulur.
+All this data is combined to form the **State vector at time t (Sₜ)**.
 
-## 👤 İnsan Yatırımcı Analojisi
+## 👤 Human Investor Analogy
 
-Bu durum (state), **insan yatırımcının piyasaya bakıp bir karar vermesi** gibi çalışır.
+This state works just like a **human investor looking at the market and making a decision**.
 
-- O anki fiyat, göstergeler ve geçmiş tecrübeye dayanarak karar verilir.
+- The decision is based on current price, indicators, and past experience.
 
-## 📈 Ödül (Reward) Ne Zaman ve Nasıl Belirlenir?
+## 📈 When and How is the Reward Determined?
 
-> Peki 30 Haziran'da yatırımcı ne yapmalı?
+> So what should the investor do on June 30?
 
-Verilecek kararın (action) sonucunda **ödül (reward)** elde edilir.
+As a result of the decision (action) taken, a **reward** is received.
 
-Ama:
+But:
 
-- Bu ödül, yalnızca **gelecekte** belli olur.
-- Örneğin: Hisse senedini şimdi almak → İleride fiyat artarsa ödül, düşerse ceza doğar.
-
-### Soru:
-> "Bir aksiyonun ödülü nasıl belirlenmeli?"
-
-Bu soru, **ödül fonksiyonu tasarımı (reward function design)** kavramına götürür.  
-Bu konu bir sonraki video dersinde ele alınacaktır.
+- This reward is only known **in the future**.
+- For example: Buying the stock now → if the price rises later = reward, if it falls = penalty.
